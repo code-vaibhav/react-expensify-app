@@ -63,3 +63,13 @@ test("Should not edit expense if id not matches", () => {
   const state = expensesReducer(expenses, action);
   expect(state).toEqual(expenses);
 });
+
+test("Should set expenses", () => {
+  const action = {
+    type: "SET_EXPENSES",
+    expenses
+  }
+
+  const state = expensesReducer(undefined, action);
+  expect(state).toEqual(expenses);
+});
